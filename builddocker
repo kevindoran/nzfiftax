@@ -1,0 +1,4 @@
+#!/bin/bash
+docker build -t nzfiftax_i \
+	--build-arg USER_ID=$(id -u) \
+	--build-arg GROUP_ID=$(id -g) ./

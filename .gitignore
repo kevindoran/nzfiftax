@@ -1,0 +1,4 @@
+**/*.swo
+**/*.swp
+**/*.pyc
+resources/transactions_2020.csv

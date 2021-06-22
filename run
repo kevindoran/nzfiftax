@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker run --rm --name fiftax nzfiftax_i \
+$1
+
+# e.g.
+# <this_file_name> pytest -k test_calc
