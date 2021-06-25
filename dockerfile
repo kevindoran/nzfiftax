@@ -12,17 +12,21 @@ WORKDIR /home/app
 
 #RUN conda config --add channels conda-forge 
 
+#ENV PATH /home/app/.local/bin:$PATH
+
+COPY --chown=$USER_ID requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
+
 COPY --chown=$USER_ID ./ ./
 
-
-ENV PATH /home/app/.local/bin:$PATH
+RUN pip install .
 
 # Switching to our new user. Do this at the end, as we need root permissions 
 # in order to create folders and install things.
 USER app
 
-RUN pip install -r requirements.txt
 # Install our own project as a module.
 # This is done so the tests can import it.
-RUN pip install .
+
 

@@ -1,5 +1,4 @@
 #!/bin/bash
-
 docker run --rm --name fiftax nzfiftax_i \
 $1
 
