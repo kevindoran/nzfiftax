@@ -99,9 +99,9 @@ def list_tickers(transactions):
 
 
 def total_taxable_amount(transactions):
-    # We are only dealing with NYSE at the moment.
+    # We are only dealing with NYSE, NASDAQ and ASX at the moment.
     exchanges = transactions['Market code'].unique()
-    covered_exchanges = {'NYSE', 'NASDAQ'}
+    covered_exchanges = {'NYSE', 'NASDAQ', 'ASX'}
     ignored_exchanges = set(exchanges) - covered_exchanges
     logging.info(f'Transactions present on the following exchanges: '
                  f'{exchanges}')
